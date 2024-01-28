@@ -1,0 +1,82 @@
+{
+  "groups": [
+    {
+      "name": "file-path",
+      "type": "com.xxx.jingdong.config.FileUploadConfig",
+      "sourceType": "com.xxx.jingdong.config.FileUploadConfig"
+    },
+    {
+      "name": "wechat",
+      "type": "com.xxx.jingdong.config.WechatAccountConfig",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file-path.base-path",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.FileUploadConfig"
+    },
+    {
+      "name": "file-path.upload-path",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.FileUploadConfig"
+    },
+    {
+      "name": "wechat.base-url",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.key-path",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.mch-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.mch-key",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.mp-app-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.mp-app-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.mp-user-info-url",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.notify-url",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.open-app-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.open-app-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    },
+    {
+      "name": "wechat.open-user-info-url",
+      "type": "java.lang.String",
+      "sourceType": "com.xxx.jingdong.config.WechatAccountConfig"
+    }
+  ],
+  "hints": []
+}

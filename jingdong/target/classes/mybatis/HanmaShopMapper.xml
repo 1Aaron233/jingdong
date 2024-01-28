@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.jingdong.mybatis.mapper.HanmaShopMapper">
+
+    <resultMap id="BaseResultMap" type="com.xxx.jingdong.pojo.Shop">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="cateId" column="cate_id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="sales" column="sales" jdbcType="INTEGER"/>
+            <result property="expressLimit" column="express_limit" jdbcType="INTEGER"/>
+            <result property="expressPrice" column="express_price" jdbcType="DECIMAL"/>
+            <result property="desc" column="desc" jdbcType="VARCHAR"/>
+            <result property="imgUrl" column="img_url" jdbcType="VARCHAR"/>
+            <result property="state" column="state" jdbcType="TINYINT"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="sellerId" column="seller_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="findAllByNameContainingAndStatusAndState" resultMap="BaseResultMap">
+        select
+        *
+        from hanma_shop
+        where
+        name like CONCAT('%', #{name,jdbcType=VARCHAR},'%')
+        AND status = #{status,jdbcType=NUMERIC}
+        AND state = #{state,jdbcType=NUMERIC}
+    </select>
+    <select id="findOneById" resultMap="BaseResultMap">
+        select
+        *
+        from hanma_shop
+        where
+        id = #{id,jdbcType=NUMERIC}
+    </select>
+
+</mapper>

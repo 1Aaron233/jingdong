@@ -1,0 +1,6 @@
+body{
+    height: 700px;
+    background: url("/jingdong/bgimg/01.png") center no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+}

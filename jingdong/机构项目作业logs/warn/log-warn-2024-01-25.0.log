@@ -1,0 +1,7 @@
+2024-01-25 00:22:51.830 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h56m13s752ms969µs700ns).
+2024-01-25 00:45:05.114 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2024-01-25 00:45:11.412 [lettuce-nioEventLoop-4-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2024-01-25 00:45:17.698 [lettuce-nioEventLoop-4-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2024-01-25 00:45:24.803 [lettuce-nioEventLoop-4-11] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2024-01-25 00:45:31.997 [lettuce-nioEventLoop-4-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2024-01-25 00:45:38.211 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379

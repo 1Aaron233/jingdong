@@ -1,0 +1,4 @@
+2024-01-18 19:16:10.054 [http-nio-8080-exec-6] ERROR com.xxx.jingdong.controller.UserController - [登陆注册]参数不正确，userForm=UserForm(username=, password=, repassword=)
+2024-01-18 19:16:21.592 [http-nio-8080-exec-5] ERROR com.xxx.jingdong.controller.UserController - [登陆注册]参数不正确，userForm=UserForm(username=, password=1, repassword=)
+2024-01-18 19:16:24.659 [http-nio-8080-exec-7] ERROR com.xxx.jingdong.controller.UserController - [登陆注册]参数不正确，userForm=UserForm(username=, password=1, repassword=1)
+2024-01-18 19:17:27.735 [http-nio-8080-exec-9] ERROR com.xxx.jingdong.controller.UserController - [登陆注册]参数不正确，userForm=UserForm(username=, password= , repassword= )

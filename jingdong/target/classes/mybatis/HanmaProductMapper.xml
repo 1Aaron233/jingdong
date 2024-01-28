@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.jingdong.mybatis.mapper.HanmaProductMapper">
+
+    <resultMap id="BaseResultMap" type="com.xxx.jingdong.pojo.Product">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="sales" column="sales" jdbcType="INTEGER"/>
+            <result property="price" column="price" jdbcType="DECIMAL"/>
+            <result property="oldPrice" column="old_price" jdbcType="DECIMAL"/>
+            <result property="productStock" column="product_stock" jdbcType="INTEGER"/>
+            <result property="imgUrl" column="img_url" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="shopId" column="shop_id" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="state" column="state" jdbcType="TINYINT"/>
+            <result property="sellerId" column="seller_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,sales,
+        price,old_price,product_stock,
+        img_url,type,shop_id,
+        status,state,seller_id
+    </sql>
+    <select id="findAllByShopIdAndStatusAndState" resultMap="BaseResultMap">
+        select
+        *
+        from hanma_product
+        where
+        shop_id = #{shopId,jdbcType=NUMERIC}
+        AND status = #{status,jdbcType=NUMERIC}
+        AND state = #{state,jdbcType=NUMERIC}
+    </select>
+    <select id="findAllByNameContainingAndStatusAndShopIdAndState" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hanma_product
+        where
+        name like CONCAT('%', #{name,jdbcType=VARCHAR},'%')
+        AND status = #{status,jdbcType=NUMERIC}
+        AND shop_id = #{shopId,jdbcType=NUMERIC}
+        AND state = #{state,jdbcType=NUMERIC}
+    </select>
+    <select id="findByShopIdAndTypeInOrderByIdDesc" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hanma_product
+        where
+        shop_id = #{shopId,jdbcType=NUMERIC}
+        AND type in
+        <foreach collection="typeList" item="item" open="(" close=")" separator=",">
+            #{item,jdbcType=VARCHAR}
+        </foreach>
+        order by id desc
+    </select>
+</mapper>

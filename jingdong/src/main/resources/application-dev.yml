@@ -1,0 +1,74 @@
+# 开发环境
+server:
+  port: 8080
+  servlet:
+    context-path: /jingdong
+
+spring:
+  #默认支持名称相同的bean的覆盖(已失效，自动装配一个新的对象来替代)
+  main:
+    #允许bean覆盖
+    allow-bean-definition-overriding: true
+    #数据库资源连接配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jingdong?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+  #模板引擎
+  freemarker: #模板引擎（下面为固定的配置，拿来就能直接用了）
+    request-context-attribute: req  #使用req访问request
+    suffix: .ftl  #后缀名，也可换为html后缀
+    content-type: text/html
+    enabled: true #设置模板后缀名
+    cache: false #设置页面缓存
+    template-loader-path: classpath:/templates/  #模板加载路径，按需分配
+    charset: utf-8  #编码格式
+  settings:
+    number_format: '0.##'  #数字格式化，无小数点
+  web:
+    resources:
+      static-locations: classpath:static/**spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${file-path.uploadPath},classpath:/static/css/
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+file-path:
+  basePath: http://localhost:8080/jingdong
+  uploadPath: E:\机构项目作业\JD_File
+
+#定义日志
+logging:
+  config: classpath:logback-spring.xml
+
+#设置微信配置
+wechat:
+  #微信网页SDK授权
+  mpAppId: wx32b98899abc39751
+  mpAppSecret: da9b44f3ecf3b7b9b76626fd0c4bc928
+  mpUserInfoUrl: http://qiaomai.natapp4.cc/jingdong/wechat/userInfo
+
+  #微信支付
+  mchId: 1572824121
+  mchKey: c56d0e9a7ccec67b4ea131655038d604
+  #keyPath证书路径，我们证书没有，所以退款只能写代码，不能演示
+#  keyPath: D:/wxpay/WXCertUtil/cert/apiclient_cert.p12
+  #将来微信通知我们的回调结果
+  notifyUrl: http://qiaomai.natapp4.cc/jingdong/pay/notify
+
+  #设置开放平台
+  openAppId: wx0626ceb11755f952
+  openAppSecret: 2f57579f353115061444ac4599e20d18
+  openUserInfoUrl: http://qiaomai.natapp4.cc/jingdong/wechat/qrUserInfo
+  #redis根路径配置
+  baseUrl: http://qiaomai.natapp4.cc
+
+# MyBatis配置
+mybatis-plus:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapper-locations: classpath*:mybatis/**/*Mapper.xml
+
